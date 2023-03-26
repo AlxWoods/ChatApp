@@ -26,7 +26,7 @@ namespace ChatClient.MVVM.Core
 
         public bool CanExecute(object parameter) 
         { 
-            return canExecute != null && canExecute(parameter);
+            return this.canExecute == null || this.canExecute(parameter);
         }
 
         public void Execute(object parameter) 

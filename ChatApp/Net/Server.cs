@@ -19,7 +19,7 @@ namespace ChatClient.Net
         {
             if (!_client.Connected)
             {
-                _client.Connect("127.0.0.1", 7891);
+                _client.Connect("127.0.0.1", 30005);
             }
         }
 

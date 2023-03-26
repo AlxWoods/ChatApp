@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Jaxto\Desktop\Projects\C# Projects\ChatApp_01\ChatApp\obj\Debug\net6.0-windows\
+C:\Users\Jaxto\Desktop\Projects\C# Projects\ChatApp\ChatApp\obj\Debug\net6.0-windows\
 ChatClient
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Jaxto\Desktop\Projects\C# Projects\ChatApp_01\ChatApp\App.xaml
+C:\Users\Jaxto\Desktop\Projects\C# Projects\ChatApp\ChatApp\App.xaml
 11121423476
 
 6945663745
 194237474483
 MVVM\View\MainWindow.xaml;
 
-True
+False
 
