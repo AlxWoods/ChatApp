@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatClient.Net.IO
+
+namespace ChatServer.Net.IO
 {
     internal class PacketBuilder
     {
         MemoryStream _ms;
-        public PacketBuilder() 
-        { 
+        public PacketBuilder()
+        {
             _ms = new MemoryStream();
 
         }
@@ -21,16 +21,16 @@ namespace ChatClient.Net.IO
             _ms.WriteByte(opcode);
         }
 
-        public void WriteMessage(string msg) 
+        public void WriteMessage(string msg)
         {
             var msgLength = msg.Length;
             _ms.Write(BitConverter.GetBytes(msgLength));
             _ms.Write(Encoding.ASCII.GetBytes(msg));
         }
 
-        public byte[] GetPacketBytes() 
-        { 
-            return _ms.GetBuffer(); 
+        public byte[] GetPacketBytes()
+        {
+            return _ms.GetBuffer();
         }
     }
 }
