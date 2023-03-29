@@ -26,5 +26,31 @@ namespace ChatServer
 
             Console.WriteLine($"[{DateTime.Now}]: Client user: {Username}");
         }
+
+        void Process()
+        {
+            while(true)
+            {
+                try 
+                { 
+                    var opcode = _packetReader.ReadByte() ;
+                    switch (opcode) 
+                    {
+                        case 5:
+                            var msg = _packetReader.ReadMessage() ;
+                            Console.WriteLine($"[{DateTime.Now}]: Message recieved {msg}");
+                            Program.BroadcastMessage(msg);
+                            break;
+                        default: break;
+                    }
+                }
+                catch( Exception e )
+                {
+                    Console.WriteLine($"[{UID.ToString()}]: Disconnected");
+                    ClientSocket.Close();
+                    throw;
+                }
+            }
+        }
     }
 }
